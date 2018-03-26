@@ -4,15 +4,16 @@ $(document).ready(function(){
     var items = ["itemOne", "itemTwo"];
     var orders = [];
     items.forEach(function(item){
-      var userInput = $("input#" + item).val().toUpperCase();
+      var userInput = $("#" + item).val().toUpperCase();
       orders.push(userInput);
+      orders.sort();
 
-    });
-    orders.sort();
-    orders.map(function(order){
-      return $(".output").append("<li>" + order + "</li>");
+      orders.map(function(order) {
+        return $(".output").append("<li>" + order + "</li>");
 
-    });
-    $("#groceries").hide();
+      });
+      });
+
+
   });
 });
